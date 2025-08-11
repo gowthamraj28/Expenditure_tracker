@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block title %}
+    Expenditure Tracker - Report
+{% endblock %}
+{% block body %}
+    <h2> Expenditure Report from {{ start_date.strftime('%Y-%m-%d') }} to {{ end_date.strftime('%Y-%m-%d') }}</h2>
+    <hr>
+    <table border="1" cellspacing= "10" cellpadding="10" width="80%" height="50%" class="table table-hover table-dark"style="width: 50%;">
+        <tr>
+            <th>Date</th>
+            <th>Item</th>
+            <th>Amount</th>
+        </tr>
+        {% for item in items %}
+        <tr>
+            <td>{{ item.date }}</td>
+            <td>{{ item.itemname }}</td>
+            <td>₹ {{ "%.2f"|format(item.amount) }}</td>
+        </tr>
+        {% endfor %}
+        <tr>
+            <td colspan="2" style="text-align: right;"><strong>Total</strong></td>
+            <td><strong> ₹ {{ "%.2f"|format(items|map(attribute = 'amount')|sum) }} </strong></td>
+        </tr>
+        <br>
+    </table>
+
+    <br>
+    <a href="{{ url_for('download_report', start_date=start_date.strftime('%Y-%m-%d'),end_date=end_date.strftime('%Y-%m-%d')) }}",target="_blank">
+            <button>Download PDF</button>
+    </a>
+    
+
+{% endblock %}

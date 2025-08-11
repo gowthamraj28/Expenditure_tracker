@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+    {% block title %}
+        Expenditure Tracker - Register Page
+    {% endblock %}
+    {% block body %}
+        <h1>Register</h1>
+        <form action="/register" method="POST" class="loginform">
+             <div class="groupform">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Gowtham" required><br><br>
+            </div>
+
+            <div class="groupform">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="abc@gmail.com" required><br><br>
+            </div>
+
+            <div class="groupform">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Password" required><br><br>
+            </div>
+
+            <div class="groupform">
+                <label for="password1">Confirm Password:</label>
+                <input type="password" id="password1" name="password1" placeholder="Password" required><br><br>
+            </div>
+            
+            <div class="groupform">
+                <button type="submit" class="loginbutton">Create Account</button>
+            </div>
+        </form>
+    {% endblock %}
