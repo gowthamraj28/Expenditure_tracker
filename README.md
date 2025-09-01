@@ -16,7 +16,7 @@ A web-based expenditure tracking app with expense management, PDF report generat
 ## Installation
 ```bash
 git clone https://github.com/gowthamraj28/Expenditure_tracker.git
-cd expenditure-tracker
+cd Expenditure-tracker
 python -m venv venv
 venv\Scripts\activate
 pip install -r requirements.txt

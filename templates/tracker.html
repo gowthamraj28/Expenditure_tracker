@@ -4,11 +4,13 @@
     {% endblock %}
 
     {% block body %}
+
+        <h3 class="welcome-msg">Welcome, {{ user.name }} </h3>
         
-        <h2>Welcome, {{ user.name }} </h2>
-        <hr>
+        
         {% if editing_item %}
-            <h3> Edit Expense</h3>
+            
+            <h4> Edit Expense</h4>
             <div class="inline-form">
             <form method="POST" action="{{ url_for('edit',item_id = editing_item.id) }}", class="expense-form">
                 <input type="text" name="itemname" class="box" placeholder="Enter the Description of Expenditure" value="{{ editing_item.itemname}}" required>
@@ -19,9 +21,12 @@
             </div>
 
         {% else %}
-            <h3>Add a new Expense</h3>
+            
+            
+            <h4>Add a new Expense</h4>
             <br>
             <div class="inline-form">
+                
                 <form method="POST" action="{{ url_for('tracker') }}" class="expense-form">
                     <input type="text" name="itemname" class="box" placeholder="Enter the Description of Expenditure" required>
                     <input type="number" name="amount" step="0.01" class="price" placeholder="Enter the Amount" required>
@@ -43,14 +48,15 @@
         </form> 
 
         <hr>
-        <h3>Your Expenses</h3>     
-
+        <h4>Your Expenses</h4>     
+        <div class="expense-container">
         <table class="table table-hover table-dark">
             <thead>
                 <tr>
                     <th scope="col">ItemName</th>
                     <th scope="col">Amount</th>
                     <th scope="col">Date</th>
+                    <th scope="col">Options</th>
                 </tr>
             </thead>
             <tbody>
@@ -67,8 +73,6 @@
                 {% endfor %}
             </tbody>
         </table>
-            
-         
-
+        </div>
         {% endblock %}
 
