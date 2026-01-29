@@ -1,7 +1,33 @@
-venv/
-__pycache__/
-*.pyc
-instance/
-app.db
-templates/database.html
-.env
+# Java class files
+*.class
+
+# Log files
+*.log
+
+# Build directories
+/bin/
+/build/
+/target/
+
+# Eclipse project files
+.classpath
+.project
+.settings/
+
+# IntelliJ IDEA project files (if ever used)
+*.iml
+.idea/
+
+# Tomcat runtime folders
+/work/
+/temp/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Generated PDF reports
+*.pdf
+
+# Database credentials (if stored locally)
+db.properties
